@@ -1,0 +1,32 @@
+{
+  "name": "aluraflix-api",
+  "version": "1.0.0",
+  "description": "api para a plafatorma aluraflix",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitorRT/aluraflix-api.git"
+  },
+  "keywords": [
+    "api-rest"
+  ],
+  "author": "VitorRT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitorRT/aluraflix-api/issues"
+  },
+  "homepage": "https://github.com/VitorRT/aluraflix-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.28.0",
+    "sequelize-cli": "^6.5.2"
+  },
+  "devDependencies": {
+    "chalk": "^3.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
