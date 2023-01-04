@@ -20,12 +20,12 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    senha: DataTypes.STRING
+    senha: DataTypes.STRING,
+    ativo: DataTypes.BOOLEAN
   }, {
+    // opções de configuração do modelo cliente...
     sequelize,
     modelName: 'Cliente',
-  }, {
-    // opções do modelo cliente...
   });
   return Cliente;
 };
