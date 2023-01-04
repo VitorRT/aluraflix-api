@@ -5,7 +5,7 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Cliente extends Model {
     static associate(models) {
-      // relações do modelo cliente...
+      // relações do modelo clientes...
     }
   }
   Cliente.init({
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         isEmail: {
           args: true,
-          msg: 'E-mail inválido!'
+          msg: 'E-mail Inválido!'
         }
       }
     },

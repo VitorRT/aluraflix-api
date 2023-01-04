@@ -1,8 +1,10 @@
 const bodyParser = require('body-parser');
+const clientes = require('./clienteRoutes');
 
 module.exports = app => {
     app.use(
-        bodyParser.json()
+        bodyParser.json(),
+        clientes
     );
 
     app.get('/', (req, res) => {
