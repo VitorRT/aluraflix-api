@@ -8,42 +8,58 @@ module.exports = {
         {
           nome: "Victor Barberino",
           email: "vitu.barberino@gmail.com",
-          senha: "adm123"
+          senha: "adm123",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           nome: "Alexandre P. Sobral",
           email: "alexandre.psobral@gmail.com",
-          senha: 'tico123'
+          senha: 'tico123',
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           nome: "Sara alcantara",
           email: "saraarh.alcantara@gmail.com",
-          senha: "mylover123"
+          senha: "mylover123",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           nome: "Luis Reis",
           email: "luisgrande.rei@gmail.com",
-          senha: "batatinhafrita1234"
+          senha: "batatinhafrita1234",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           nome: "Raquel Neves",
           email: "raquellinda@gmail.com",
-          senha: "meuvivis2"
+          senha: "meuvivis2",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           nome: "Pablo Carlos",
           email: "pabloo.manito@gmail.com",
-          senha: "craftdes123@sd"
+          senha: "craftdes123@sd",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           nome: "Pedro Moura",
           email: "pedrorodrigues.moura@gmail.com",
-          senha: "sevenpecaids@best"
+          senha: "sevenpecaids@best",
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           nome: "Mirela S2",
           email: "taigaa.mih@gmail.com",
-          senha: "mr.taiga@potato"
+          senha: "mr.taiga@potato",
+          createdAt: new Date(),
+          updatedAt: new Date()
         }
     ], {});
 
