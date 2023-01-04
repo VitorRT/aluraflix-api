@@ -9,8 +9,24 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      cod_categoria: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Categoria",
+          key: "id"
+        }
+      },
+      cod_video: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Videos",
+          key: "id"
+        }
+      },
       qtd_video: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -18,6 +34,10 @@ module.exports = {
       },
       updatedAt: {
         allowNull: false,
+        type: Sequelize.DATE
+      },
+      deletedAt: {
+        allowNull: true,
         type: Sequelize.DATE
       }
     });

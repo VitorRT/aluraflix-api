@@ -4,18 +4,22 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Itens_Categorias extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      // relações do modelo itens_categorias
+
+      Itens_Categorias.belongsTo(models.Categoria, {
+        foreignKey: "cod_categoria"
+      })
+      Itens_Categorias.belongsTo(models.Video, {
+        foreignKey: "cod_video"
+      })
     }
   }
   Itens_Categorias.init({
-    qtd_video: DataTypes.NUMBER
+    qtd_video: DataTypes.INTEGER
   }, {
+    // opções de configuração do modelo Itens_categoria
+    paranoid: true,
     sequelize,
     modelName: 'Itens_Categorias',
   });

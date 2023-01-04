@@ -4,20 +4,33 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Playlist extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      // relações do modelo playlist
+      
+      Playlist.belongsTo(models.Cliente, {
+        foreignKey: "cod_cliente"
+      })
+
+      Playlist.hasMany(models.Itens_playlist, {
+        foreignKey: "cod_playlist"
+      })
     }
   }
   Playlist.init({
-    nome: DataTypes.STRING,
+    nome: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: "O campo nome está vazio. Por favor, insira um nome para a playlist."
+        }
+      }
+    },
     descricao: DataTypes.STRING,
     publica: DataTypes.BOOLEAN
   }, {
+    // opções de configuração do modelo Playlist
+    paranoid: true,
     sequelize,
     modelName: 'Playlist',
   });

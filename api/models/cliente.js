@@ -6,6 +6,16 @@ module.exports = (sequelize, DataTypes) => {
   class Cliente extends Model {
     static associate(models) {
       // relações do modelo clientes...
+
+      Cliente.hasMany(models.Video, {
+        foreignKey: "cod_cliente"
+      }) 
+      Cliente.hasMany(models.Categoria, {
+        foreignKey: "cod_cliente"
+      })
+      Cliente.hasMany(models.Playlist, {
+        foreignKey: "cod_cliente"
+      })
     }
   }
   Cliente.init({

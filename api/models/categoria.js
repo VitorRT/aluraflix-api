@@ -4,19 +4,31 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Categoria extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
+      // relações do modelo categoria
+
+      Categoria.belongsTo(models.Cliente, {
+        foreignKey: "cod_cliente"
+      })
+      Categoria.hasMany(models.Itens_categorias, {
+        foreignKey: "cod_categoria"
+      })
     }
   }
   Categoria.init({
-    nome: DataTypes.STRING,
+    nome: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: {
+          args: true,
+          msg: 'O campo nome está vazio. Por favor, insira um nome para a categoria.'
+        }
+      }
+    },
     descricao: DataTypes.STRING
   }, {
+    // opções de configuração do modelo Categoria
+    paranoid: true,
     sequelize,
     modelName: 'Categoria',
   });

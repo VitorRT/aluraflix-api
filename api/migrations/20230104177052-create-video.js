@@ -9,16 +9,27 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      cod_cliente: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Clientes',
+          key: 'id'
+        }
+      },
       titulo: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       descricao: {
         type: Sequelize.STRING
       },
       url: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       publico: {
+        allowNull: false,
         type: Sequelize.BOOLEAN
       },
       createdAt: {
@@ -27,6 +38,10 @@ module.exports = {
       },
       updatedAt: {
         allowNull: false,
+        type: Sequelize.DATE
+      },
+      deletedAt: {
+        allowNull: true,
         type: Sequelize.DATE
       }
     });
