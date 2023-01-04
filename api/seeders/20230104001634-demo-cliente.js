@@ -8,57 +8,65 @@ module.exports = {
         {
           nome: "Victor Barberino",
           email: "vitu.barberino@gmail.com",
-          senha: "adm123",
+          senha: "Adm123",
+          ativo: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           nome: "Alexandre P. Sobral",
           email: "alexandre.psobral@gmail.com",
-          senha: 'tico123',
+          senha: 'Tico123',
+          ativo: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           nome: "Sara alcantara",
           email: "saraarh.alcantara@gmail.com",
-          senha: "mylover123",
+          senha: "Mylover123",
+          ativo: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           nome: "Luis Reis",
           email: "luisgrande.rei@gmail.com",
-          senha: "batatinhafrita1234",
+          senha: "Batatinhafrita1234",
+          ativo: true,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           nome: "Raquel Neves",
           email: "raquellinda@gmail.com",
-          senha: "meuvivis2",
+          senha: "Meuvivis2",
+          ativo: false,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           nome: "Pablo Carlos",
           email: "pabloo.manito@gmail.com",
-          senha: "craftdes123@sd",
+          senha: "Craftdes123@sd",
+          ativo: false,
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           nome: "Pedro Moura",
           email: "pedrorodrigues.moura@gmail.com",
-          senha: "sevenpecaids@best",
+          senha: "Sevenpecaids@best23",
           createdAt: new Date(),
+          ativo: true,
           updatedAt: new Date()
         },
         {
           nome: "Mirela S2",
           email: "taigaa.mih@gmail.com",
-          senha: "mr.taiga@potato",
+          senha: "Mr.taiga@potato561",
           createdAt: new Date(),
+          ativo: false,
           updatedAt: new Date()
         }
     ], {});
