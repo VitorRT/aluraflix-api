@@ -2,7 +2,7 @@ const { Router } = require('express');
 const controller = require('../controllers/clienteController');
 
 const routes = Router();
-const end = '/clientes';
+const end = '/clients';
 const endid = `${end}/:id`;
 
 module.exports = routes
@@ -10,4 +10,6 @@ module.exports = routes
 .get(endid, controller.getOneClient)
 .post(end, controller.registerClient)
 .put(endid, controller.editClient)
+.delete(endid, controller.deleteClient)
+.post(`${endid}/restore`, controller.restoreClient)
 ;
