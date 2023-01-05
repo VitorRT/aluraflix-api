@@ -8,10 +8,12 @@ module.exports = (sequelize, DataTypes) => {
       // relações do modelo itens_playlist
 
       Itens_Playlist.belongsTo(models.Playlist, {
-        foreignKey: "cod_playlist"
+        foreignKey: "cod_playlist",
+        onDelete: 'CASCADE'
       })
       Itens_Playlist.belongsTo(models.Video, {
-        foreignKey: "cod_video"
+        foreignKey: "cod_video",
+        onDelete: 'CASCADE'
       })
     }
   }

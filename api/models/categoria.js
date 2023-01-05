@@ -8,10 +8,12 @@ module.exports = (sequelize, DataTypes) => {
       // relações do modelo categoria
 
       Categoria.belongsTo(models.Cliente, {
-        foreignKey: "cod_cliente"
+        foreignKey: "cod_cliente",
+        onDelete: 'CASCADE'
       })
       Categoria.hasMany(models.Itens_categorias, {
-        foreignKey: "cod_categoria"
+        foreignKey: "cod_categoria",
+        onDelete: 'CASCADE'
       })
     }
   }

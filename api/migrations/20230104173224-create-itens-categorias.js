@@ -12,6 +12,7 @@ module.exports = {
       cod_categoria: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
         references: {
           model: "Categoria",
           key: "id"
@@ -20,6 +21,7 @@ module.exports = {
       cod_video: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
         references: {
           model: "Videos",
           key: "id"
