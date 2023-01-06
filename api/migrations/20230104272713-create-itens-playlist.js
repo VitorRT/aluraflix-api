@@ -2,26 +2,26 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Itens_Categorias', {
+    await queryInterface.createTable('Itens_Playlists', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      cod_categoria: {
+      cod_playlist: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
+        onDelete: "CASCADE",
         references: {
-          model: "Categoria",
+          model: "Playlists",
           key: "id"
         }
       },
       cod_video: {
         allowNull: false,
         type: Sequelize.INTEGER,
-        onDelete: 'CASCADE',
+        onDelete: "CASCADE",
         references: {
           model: "Videos",
           key: "id"
@@ -45,6 +45,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Itens_Categorias');
+    await queryInterface.dropTable('Itens_Playlists');
   }
 };

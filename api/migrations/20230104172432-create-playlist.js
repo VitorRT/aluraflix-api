@@ -23,6 +23,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       descricao: {
+        allowNull: true,
         type: Sequelize.STRING
       },
       publica: {
