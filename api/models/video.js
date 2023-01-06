@@ -46,7 +46,6 @@ module.exports = (sequelize, DataTypes) => {
     publico: DataTypes.BOOLEAN
   }, {
     //opções de configuração do modelo video...
-    paranoid: true,
     sequelize,
     modelName: 'Video',
   });

@@ -59,7 +59,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     // opções de configuração do modelo cliente...
-    paranoid: true,
     sequelize,
     modelName: 'Cliente',
   });

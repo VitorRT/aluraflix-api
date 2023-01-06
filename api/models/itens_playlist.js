@@ -18,10 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Itens_Playlist.init({
-    qtd_video: DataTypes.INTEGER
   }, {
     // opções de configuração do modelo Itens_playlist
-    paranoid: true,
     sequelize,
     modelName: 'Itens_Playlist',
   });

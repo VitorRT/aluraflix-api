@@ -30,7 +30,6 @@ module.exports = (sequelize, DataTypes) => {
     descricao: DataTypes.STRING
   }, {
     // opções de configuração do modelo Categoria
-    paranoid: true,
     sequelize,
     modelName: 'Categoria',
   });

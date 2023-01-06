@@ -11,5 +11,4 @@ module.exports = routes
 .post(`${end}/signup`, controller.registerClient)
 .put(endid, controller.editClient)
 .delete(endid, controller.deleteClient)
-.post(`${endid}/restore`, controller.restoreClient)
 ;

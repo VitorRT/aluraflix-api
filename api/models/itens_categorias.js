@@ -18,10 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Itens_Categorias.init({
-    qtd_video: DataTypes.INTEGER
   }, {
     // opções de configuração do modelo Itens_categoria
-    paranoid: true,
     sequelize,
     modelName: 'Itens_Categorias',
   });

@@ -32,7 +32,6 @@ module.exports = (sequelize, DataTypes) => {
     publica: DataTypes.BOOLEAN
   }, {
     // opções de configuração do modelo Playlist
-    paranoid: true,
     sequelize,
     modelName: 'Playlist',
   });
