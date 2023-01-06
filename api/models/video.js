@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "cod_cliente",
         onDelete: 'CASCADE'
       })
-      Video.hasMany(models.Itens_playlist, {
+      Video.hasMany(models.Itens_Playlist, {
         foreignKey: "cod_video",
         onDelete: 'CASCADE'
       })
-      Video.hasMany(models.Itens_categorias, {
+      Video.hasMany(models.Itens_Categorias, {
         foreignKey: "cod_video",
         onDelete: 'CASCADE'
       })

@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'CASCADE'
       })
 
-      Playlist.hasMany(models.Itens_playlist, {
+      Playlist.hasMany(models.Itens_Playlist, {
         foreignKey: "cod_playlist",
         onDelete: 'CASCADE'
       })
