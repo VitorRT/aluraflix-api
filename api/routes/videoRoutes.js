@@ -3,7 +3,7 @@ const controller = require('../controllers/videoController');
 
 const router = Router();
 const end = "/videos";
-const endid = `${end}/:id`;
+const endid = `${end}/id=:id`;
 
 module.exports = router
 .get(end, controller.getAllVideos)
