@@ -1,4 +1,6 @@
 const db = require('../models');
+const crypto = require('../utils/cryptoJs');
+const authenticate = require('../utils/authenticate');
 
 class ClienteController {
     static async getAllClients(req, res){
@@ -6,7 +8,9 @@ class ClienteController {
             const allClients = await db.Cliente.findAll();
             return res.status(200).json(allClients);
         } catch (error) {
-            return res.status(500).json(error.message); 
+            return res.status(500).json({
+                error: error.message
+            }); 
         }
     };
 
@@ -17,20 +21,28 @@ class ClienteController {
                 where: {
                     id: Number(id)
                 }
-            });
+            }); 
             return res.status(200).json(client)
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     };
 
     static async registerClient(req, res) {
-        const clientBody = req.body;
+        const senhaCap = req.body.senha;
+        const clientBody = {
+            ...req.body,
+            senha: await crypto.hasherPwd(senhaCap)
+        };
         try {
             const newClient = await db.Cliente.create(clientBody);
             return res.status(200).json(newClient);
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -53,7 +65,9 @@ class ClienteController {
                 return res.status(200).json(clientEdited);
             }
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -70,7 +84,41 @@ class ClienteController {
                 message: `[ ${id} ] - cliente deletado com sucesso! 🚧`
             })
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
+        }
+    }
+
+    static async authenticateClient(req, res){
+        const { email, senha } = req.body;
+        try {
+            //verificando se o usuário existe no banco
+            const user = await db.Cliente.findOne({
+                where: {
+                    email: email
+                }
+            })
+            if(!user) {
+                return res.status(402).send({
+                    "msg": "Usuário não existente"
+                })
+            }
+
+            //verificando credenciais
+            const checkCredencials = await crypto.authenticateCredentials(senha, user.senha);
+            if(!checkCredencials) return res.status(422).json({msg: "Senha inválida!"});
+            
+            const tokenUser = authenticate(user.id, user.email);
+            return res.status(200).json({
+                "msg": "Autenticação realizada com sucesso! ✅",
+                tokenUser
+            })
+
+        } catch (error) {
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 

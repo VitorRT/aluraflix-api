@@ -11,4 +11,5 @@ module.exports = routes
 .post(`${end}/signup`, controller.registerClient)
 .put(`${endid}/edit`, controller.editClient)
 .delete(`${endid}/delete`, controller.deleteClient)
+.post(`${end}/login`, controller.authenticateClient)
 ;
