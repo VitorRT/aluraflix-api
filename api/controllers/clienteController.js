@@ -2,6 +2,7 @@ const db = require('../models');
 const crypto = require('../utils/cryptoJs');
 const authenticate = require('../utils/authenticate');
 
+
 class ClienteController {
     static async getAllClients(req, res){
         try {
@@ -116,9 +117,9 @@ class ClienteController {
             }
 
             //verificando credenciais
-            const checkCredencials = await crypto.authenticateCredentials(senha, user.senha);
+            const checkCredencials = crypto.authenticateCredentials(senha, user.senha);
             if(!checkCredencials) return res.status(422).json({msg: "Senha inválida!"});
-            
+
             const tokenUser = authenticate(user.id, user.email);
             return res.status(200).json({
                 "msg": "Autenticação realizada com sucesso! ✅",

@@ -1,14 +1,15 @@
 const { Router } = require('express');
 const controller = require('../controllers/videoController');
+const checkToken = require('../utils/checkToken');
 
 const router = Router();
 const end = "/videos";
 const endid = `${end}/id=:id`;
 
 module.exports = router
-.get(end, controller.getAllVideos)
-.get(endid, controller.getOneVideo)
-.post(`${end}/create`, controller.createVideo)
-.put(`${endid}/edit`, controller.editVideo)
-.delete(endid, controller.deleteVideo)
+.get(end, checkToken, controller.getAllVideos)
+.get(endid, checkToken, controller.getOneVideo)
+.post(`${end}/create`, checkToken, controller.createVideo)
+.put(`${endid}/edit`, checkToken, controller.editVideo)
+.delete(endid, checkToken, controller.deleteVideo)
 ;

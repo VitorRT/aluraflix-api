@@ -6,6 +6,8 @@ exports.hasherPwd = async (pwd) => {
     return pwdHasheada;
 }
 
-exports.authenticateCredentials = (pwd, realPwd) => {
-    return bcrypt.compare(pwd, realPwd);
+exports.authenticateCredentials = async(pwd, realPwd) => {
+    return await bcrypt.compare(pwd, realPwd, (err) => {
+        if(err) return err;
+    });
 }
