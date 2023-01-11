@@ -7,7 +7,7 @@ const end = '/clients';
 const endid = `${end}/id=:id`;
 
 module.exports = routes
-.get(end, checkToken, controller.getAllClients)
+.get(end,  controller.getAllClients)
 .get(endid, checkToken, controller.getOneClient)
 .post(`${end}/signup`, controller.registerClient)
 .put(`${endid}/edit`, checkToken, controller.editClient)

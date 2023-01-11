@@ -9,7 +9,7 @@ module.exports = {
           // id: 1
           nome: "Victor Barberino",
           email: "vitu.barberino@gmail.com",
-          senha: "Adm123",
+          senha: "adm123",
           ativo: true,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -18,7 +18,7 @@ module.exports = {
           // id: 2
           nome: "Alexandre P. Sobral",
           email: "alexandre.psobral@gmail.com",
-          senha: 'Tico123',
+          senha: 'tico123',
           ativo: true,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -27,7 +27,7 @@ module.exports = {
           // id: 3
           nome: "Sara alcantara",
           email: "saraarh.alcantara@gmail.com",
-          senha: "Mylover123",
+          senha: "mylover123",
           ativo: true,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -36,7 +36,7 @@ module.exports = {
           // id: 4
           nome: "SS Clips",
           email: "ssbest.clipsmoreira@gmail.com",
-          senha: "Batatinhafrita1234",
+          senha: "batatinhafrita1234",
           ativo: true,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -45,7 +45,7 @@ module.exports = {
           // id: 5
           nome: "Raquel Neves",
           email: "raquellinda@gmail.com",
-          senha: "Meuvivis2",
+          senha: "meuvivis2",
           ativo: false,
           createdAt: new Date(),
           updatedAt: new Date()
@@ -72,7 +72,7 @@ module.exports = {
           // id: 8
           nome: "Mirela S2",
           email: "taigaa.mih@gmail.com",
-          senha: "Mr.taiga@potato561",
+          senha: "mr.taiga@potato561",
           ativo: false,
           createdAt: new Date(),
           updatedAt: new Date()
