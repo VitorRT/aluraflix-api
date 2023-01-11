@@ -61,6 +61,12 @@ module.exports = (sequelize, DataTypes) => {
     // opções de configuração do modelo cliente...
     sequelize,
     modelName: 'Cliente',
+    defaultScope: {
+      where: {
+        ativo: true
+      },
+      attributes: { exclude: ['senha'] }
+    }
   });
   return Cliente;
 };

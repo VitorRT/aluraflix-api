@@ -6,6 +6,11 @@ class ClienteController {
     static async getAllClients(req, res){
         try {
             const allClients = await db.Cliente.findAll();
+            if(allClients === null) {
+                return res.status(404).json({
+                    "msg": "Nenhum cliente cadastrado ou com a conta ativa."
+                })
+            }
             return res.status(200).json(allClients);
         } catch (error) {
             return res.status(500).json({
@@ -22,6 +27,11 @@ class ClienteController {
                     id: Number(id)
                 }
             }); 
+            if(client === null) {
+                return res.status(404).json({
+                    "msg": "Nenhum cliente cadastrado ou com a conta ativa foi encontrado."
+                })
+            }
             return res.status(200).json(client)
         } catch (error) {
             return res.status(500).json({

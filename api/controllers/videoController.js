@@ -4,6 +4,11 @@ class VideoController {
     static async getAllVideos(req, res) {
         try {
             const allVideos = await db.Video.findAll();
+            if(allVideos === null) {
+                return res.status(404).json({
+                    "msg": "Nenhum video cadastrado ou ativo foi encontrado."
+                })
+            }
             return res.status(200).json(allVideos);
         } catch (error) {
             return res.status(500).json(error.message);
@@ -18,6 +23,11 @@ class VideoController {
                     id: Number(id)
                 }
             })
+            if(videoid === null) {
+                return res.status(404).json({
+                    "msg": "Nenhum video cadastrado ou ativo foi encontrado."
+                })
+            }
             return res.status(200).json(videoid);
         } catch (error) {
             return res.status(500).json(error.message);

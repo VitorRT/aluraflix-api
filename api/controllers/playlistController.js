@@ -4,9 +4,38 @@ class PlaylistController {
     static async getAllPlaylists(req, res){
         try {
             const allPlaylists = await db.Playlist.findAll();
+            if(allPlaylists === null) {
+                return res.status(404).json({
+                    "msg": "Nenhuma playlist cadastrada ativa foi encontrada."
+                })
+            }
             return res.status(200).json(allPlaylists);
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
+        }
+    }
+    
+    static async getAllPrivatesPlaylistsOfClient(req, res) {
+        const { client_id } = req.params;
+        try {
+            const allPrivatesPlaylists = await db.Playlist.scope('privates').findAll({
+                where: {
+                    cod_cliente: Number(client_id)
+                }
+            })
+            if(allPrivatesPlaylists === null) {
+                return res.status(200).json({
+                    "msg": "Esse cliente não possui nenhuma playlist privada."
+                })
+            }
+
+            return res.status(200).json(allPrivatesPlaylists);
+        } catch (error) {
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -18,9 +47,41 @@ class PlaylistController {
                     id: Number(id)
                 }
             })
+
+            if(playlistId === null) {
+                return res.status(404).json({
+                    "msg": "Nenhuma playlist cadastrada ativa foi encontrada."
+                })
+            }
             return res.status(200).json(playlistId);
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
+        }
+    }
+
+    static async getOnePrivatePlaylistOfClient(req, res){
+        const { id, client_id } = req.params;
+        try {
+            const onePrivatePlaylist = await db.Playlist.scope('privates').findOne({
+                where: {
+                    id: Number(id),
+                    cod_cliente: Number(client_id)
+                }
+            });
+
+            if(onePrivatePlaylist === null) {
+                return res.status(404).json({
+                    "msg": "Nenhuma playlist cadastrada ativa foi encontrada."
+                })
+            }
+
+            return res.status(200).json(onePrivatePlaylist);
+        } catch (error) {
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -30,7 +91,9 @@ class PlaylistController {
             const newPlaylist = await db.Playlist.create(playlistBody);
             return res.status(200).json(newPlaylist);
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -50,7 +113,9 @@ class PlaylistController {
             })
             return res.status(200).json(playlistEdited);
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -67,7 +132,9 @@ class PlaylistController {
                 message: `[ ${id} ] - playlist deletada com sucesso! 🚧`
             })
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -79,9 +146,17 @@ class PlaylistController {
                     cod_playlist: Number(id)
                 }
             });
+
+            if(itens === null || !itens){
+                return res.status(404).json({
+                    "msg": "Essa playlist está vazia. Nenhum video foi encontrado."
+                });
+            }
             return res.status(200).json(itens)
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -94,10 +169,18 @@ class PlaylistController {
                     cod_playlist: Number(id),
                     cod_video: Number(item_id)
                 }
-            })
-            return res.status(200).json(oneItem)
+            });
+
+            if(oneItem === null || !oneItem) {
+                return res.status(404).json({
+                    "msg": "Essa playlist está vazia. Nenhum video foi encontrado."
+                });
+            }
+            return res.status(200).json(oneItem);
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -111,7 +194,9 @@ class PlaylistController {
             const newItemInPlaylist = await db.Itens_Playlist.create(itemBody);
             return res.status(200).json(newItemInPlaylist);
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 
@@ -128,7 +213,9 @@ class PlaylistController {
                 message: `[ ${item_id} ] - vídeo removido da playlist com sucesso! 🚧`
             })
         } catch (error) {
-            return res.status(500).json(error.message);
+            return res.status(500).json({
+                error: error.message
+            });
         }
     }
 }

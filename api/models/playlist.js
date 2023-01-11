@@ -34,6 +34,18 @@ module.exports = (sequelize, DataTypes) => {
     // opções de configuração do modelo Playlist
     sequelize,
     modelName: 'Playlist',
+    defaultScope: {
+      where: {
+        publica: true
+      }
+    },
+    scopes: {
+      privates: {
+        where: {
+          publica: false
+        }
+      }
+    }
   });
   return Playlist;
 };

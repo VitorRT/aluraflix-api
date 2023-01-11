@@ -15,4 +15,6 @@ module.exports = router
 .get(`${endid}/itens=:item_id`, controller.getOneItemPlaylist)
 .post(`${endid}/itens/create`, controller.registerItemInPlaylist)
 .delete(`${endid}/itens=:item_id/delete`, controller.removeItemFromPlaylist)
+.get(`${end}/private/client=:client_id`, controller.getAllPrivatesPlaylistsOfClient)
+.get(`${endid}/private/client=:client_id`, controller.getOnePrivatePlaylistOfClient)
 ;

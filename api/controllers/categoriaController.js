@@ -4,6 +4,11 @@ class CategoriaController {
     static async getAllCategoria(req, res) {
         try {
             const allCategoria = await db.Categoria.findAll();
+            if(allCategoria === null) {
+                return res.status(404).json({
+                    "msg": "Nenhuma categoria cadastrada foi encontrada."
+                })
+            }
             return res.status(200).json(allCategoria);
         } catch (error) {
             return res.status(500).json(error.message);
@@ -18,6 +23,11 @@ class CategoriaController {
                     id: Number(id)
                 }
             })
+            if(oneCategoria === null) {
+                return res.status(404).json({
+                    "msg": "Nenhuma categoria cadastrada foi encontrada."
+                })
+            }
             return res.status(200).json(oneCategoria);
         } catch (error) {
             return res.status(500).json(error.message);
