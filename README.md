@@ -1,8 +1,8 @@
 
 # ALURAFLIX 🍿
 
-<div align="center">
-<img src="https://uploaddeimagens.com.br/images/004/295/520/full/Design_sem_nome.png?1673473762" alt="aluraflix-logo"/>
+<div>
+  <img src="https://uploaddeimagens.com.br/images/004/295/520/full/Design_sem_nome.png?1673473762" alt="aluraflix-logo"/>
 <div/>
 Neste projeto nós vamos construir o back-end para a plataforma de vídeos Aluraflix desenvolvimento uma API-REST que trata os possíveis erros e que sempre autentica quem for disparar qualquer requisição.
 
