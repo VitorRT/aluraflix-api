@@ -9,7 +9,7 @@ Neste projeto nós vamos construir o back-end para a plataforma de vídeos Alura
 <hr/>
 
 ### Opa, prazer! Meu nome é Vitor  🧏🏾‍♂️
-> Sou um desenvolvedor back-end com mentalidade de growth! <a href="" target="_blank">Vem me conhecer <a/> um pouco mais, tenho certeza que você vai gostar 😉
+> Sou um desenvolvedor back-end com mentalidade de growth! <a href="https://linktr.ee/VitorRT" target="_blank">Vem me conhecer <a/> um pouco mais, tenho certeza que você vai gostar 😉
 
 ## Agradecimentos 
 Antes de tudo, eu gostaria agradecer a algumas pessoas que colaboraram muito para a criação deste projeto. Se não fosse por essas pessoas eu teria muita dificuldade e talvez esse projeto nem iria sair. Então gostaria de agradecer ao <a href="https://www.linkedin.com/in/hugobereta/" target="_blank">Hugo Bereta<a/>, um amigo da comunidade do discord da Alura que ajudou bastante na modelagem dos dados, e gostaria de agradecer ao <a href="https://www.linkedin.com/in/matheusbattisti/" target="_blank">Matheus Battisti</a> do canal Hora de Codar, que ajudou com seu vídeo sobre autenticação usando o JWT.
@@ -40,7 +40,7 @@ _Como meta desse projeto vamos desenvolver uma API compatível com qualquer fram
 > Antes de decidirmos qual será o SGBD que iremos utilizar, vamos modelar os dados primeiro.
 
 ![modelagem-dos-dados](https://uploaddeimagens.com.br/images/004/296/567/full/image.png?1673544625)
-_Fiz essa modelagem com a minha interpretação, sei que não é a melhor modelagem mas ta de ótimo tamanho para esse projeto. Se você não concorda com alguma coisa dessa modelagem ou não entendeu algo, <a href="https://www.youtube.com/" target="_blank">pode me chamar!<a/>_
+_Fiz essa modelagem com a minha interpretação, sei que não é a melhor modelagem mas ta de ótimo tamanho para esse projeto. Se você não concorda com alguma coisa dessa modelagem ou não entendeu algo, <a href="https://linktr.ee/VitorRT" target="_blank">pode me chamar!<a/>_
 
 
 # Endpoints 🔚
